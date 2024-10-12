@@ -2,7 +2,7 @@ $(document).ready(function() {
     $("#task-form").submit(function(event) {
         event.preventDefault();
         const taskText = $("#task-input").val().trim();
-        if (taskText !== "" && taskText.length <= 60) { 
+        if (taskText !== "" && taskText.length <= 50) { 
             const listItem = $("<li>").text(taskText);
             listItem.click(function() {
                 $(this).toggleClass("completed");
@@ -18,7 +18,7 @@ $(document).ready(function() {
             $("#task-list").append(listItem);
             $("#task-input").val("");
         } else {
-            alert("A tarefa deve ter no máximo 60 caracteres.");
+            alert("A tarefa deve ter no máximo 50 caracteres.");
         }
     });
 });
